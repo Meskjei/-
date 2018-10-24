@@ -1,2 +1,4 @@
 <!--Pages/login/login.wxml-->
-<text>Pages/login/login.wxml</text>
+<input placeholder="账户" class='user-id' bindinput='getUsername' />
+<input placeholder="密码" class='password' bindinput='getPassword' password='true' />
+<button class='login' bindtap='loginClick' hover-class='login-hover'>登录</button>
