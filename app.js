@@ -33,6 +33,6 @@ App({
   },
   globalData: {
     clientId: '46408eb85ce79773f291',
-    tableId: 55328,
+    newsTableId: 55410,
   }
 })
