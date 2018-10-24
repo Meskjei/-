@@ -52,6 +52,7 @@
   margin-top: 20rpx;
   height: 600rpx;
   width: 100%;
+  border-bottom: 5rpx solid #ececec;
 }
 
 .popularActivityContainer swiper {
@@ -90,4 +91,52 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
+}
+
+.publishInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.publisherInfo{
+  margin-top: 10rpx;
+  height: 60rpx;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.publisherInfo image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 35rpx;
+}
+
+.publisherInfo text{
+  margin-left: 10rpx;
+  align-self: flex-end;
+  font-size: 30rpx;
+  color: #282c2b;
+}
+
+.publishInfo .publishTime{
+  font-size: 25rpx;
+  color: #8d8f90;
+  font-weight: bold;
+}
+
+/*活动列表样式*/
+
+.activityContainer{
+  margin-top: 20rpx;
+}
+
+.activityContainer .title{
+  display: block;
+  color: #8d8f90;
+  font-size: 40rpx;
+  padding-left: 15rpx;
+  border-left: 20rpx solid #00b2bc;
 }

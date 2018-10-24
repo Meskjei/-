@@ -18,11 +18,18 @@
         <swiper-item class='popularActivity'>
           <image src='{{item.picUrl}}' mode='aspectFill'></image>
           <text class='popularActivityTitle'>{{item.title}}</text>
-          <view class='publisherInfo'>
-            
+          <view class='publishInfo'>
+            <view class='publisherInfo'>
+              <image src='https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=06f18776399b033b3388fada25cf3620/77c6a7efce1b9d162f210013fedeb48f8d5464da.jpg'></image>
+              <text>testUserName</text>
+            </view>
+            <text class='publishTime'>2018.10.24</text>
           </view>
         </swiper-item>
       </block>
     </swiper>
+  </view>
+  <view class='activityContainer'>
+    <text class='title'>{{activityType[currentActivityIndex]}}活动</text>
   </view>
 </view>
