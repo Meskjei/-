@@ -1,0 +1,25 @@
+<!--Pages/home/home.wxml-->
+<view class='container'>
+  <view class='header'>
+    <text class='header-title'>首页</text>
+    <picker class='activityPicker' range='{{activityType}}' value='{{currentActivityIndex}}' bindchange='changeActivity'>
+      <view class='activityType'>
+        <text>{{activityType[currentActivityIndex]}}</text>
+        <view>
+          <text>></text>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <view class='popularActivityContainer'>
+    <text class='title'>热门活动</text>
+    <swiper>
+      <block wx:for='{{popularActivity}}'>
+        <swiper-item class='popularActivity'>
+          <image src='{{item.picUrl}}' mode='aspectFill'></image>
+          <text class='popularActivityTitle'>{{item.title}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
