@@ -31,5 +31,20 @@
   </view>
   <view class='activityContainer'>
     <text class='title'>{{activityType[currentActivityIndex]}}活动</text>
+    <block>
+      <view class='activity'>
+        <view class='activity-left'>
+          <text class='activityTitle'>带你遇见零售未来的模样</text>
+          <text class='activityBrief'>高中时，当周围同学还在题海中挣扎时，林小龙独自摸索着PS、剪视频、做网页；当大家还停留在刚升入大学的懵懂迷茫阶段时，凭借着精通网页设计的优势，林小龙获得了新浪实习的机会</text>
+          <view class='publishInfo'>
+            <text>by testUserName</text>
+            <text class='publishTime'>2018.10.24</text>
+          </view>
+        </view>
+        <view class='activity-right'>
+          <image src='https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=06f18776399b033b3388fada25cf3620/77c6a7efce1b9d162f210013fedeb48f8d5464da.jpg'></image>
+        </view>
+      </view>
+    </block>
   </view>
 </view>

@@ -93,14 +93,14 @@
   -webkit-line-clamp: 1;
 }
 
-.publishInfo{
+.publishInfo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.publisherInfo{
+.publisherInfo {
   margin-top: 10rpx;
   height: 60rpx;
   display: inline-flex;
@@ -108,20 +108,20 @@
   justify-content: flex-start;
 }
 
-.publisherInfo image{
+.publisherInfo image {
   width: 60rpx;
   height: 60rpx;
   border-radius: 35rpx;
 }
 
-.publisherInfo text{
+.publisherInfo text {
   margin-left: 10rpx;
   align-self: flex-end;
   font-size: 30rpx;
   color: #282c2b;
 }
 
-.publishInfo .publishTime{
+.publishInfo .publishTime {
   font-size: 25rpx;
   color: #8d8f90;
   font-weight: bold;
@@ -129,14 +129,67 @@
 
 /*活动列表样式*/
 
-.activityContainer{
+.activityContainer {
   margin-top: 20rpx;
 }
 
-.activityContainer .title{
+.activityContainer .title {
   display: block;
   color: #8d8f90;
   font-size: 40rpx;
   padding-left: 15rpx;
   border-left: 20rpx solid #00b2bc;
+  margin-bottom: 20rpx;
+}
+
+.activity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 200rpx;
+  width: 100%;
+}
+
+.activity-left {
+  display: inline-flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.activityTitle{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.activityBrief {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  font-size: 28rpx;
+  color: #bebfbf;
+  font-weight: bold;
+}
+
+.activity .publishInfo text:first-of-type{
+  font-size: 28rpx;
+}
+
+.activity-right{
+  display: inline-flex;
+  width: 38%;
+  height: 100%;
+}
+
+.activity-right image{
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
 }
