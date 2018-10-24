@@ -91,6 +91,7 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .publishInfo {
@@ -130,7 +131,7 @@
 /*活动列表样式*/
 
 .activityContainer {
-  margin-top: 20rpx;
+  margin-top: 40rpx;
 }
 
 .activityContainer .title {
