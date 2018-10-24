@@ -1,1 +1,13 @@
 /* Pages/my/my.wxss */
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userInfoContainer{
+  width: 100%;
+  height: 400rpx;
+  background-color: #64bdcc;
+}

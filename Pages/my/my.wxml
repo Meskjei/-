@@ -1,2 +1,6 @@
 <!--Pages/my/my.wxml-->
-<text>Pages/my/my.wxml</text>
+<view class='container'>
+  <view class='userInfoContainer'>
+  
+  </view>
+</view>
