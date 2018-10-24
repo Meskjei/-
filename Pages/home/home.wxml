@@ -18,6 +18,9 @@
         <swiper-item class='popularActivity'>
           <image src='{{item.picUrl}}' mode='aspectFill'></image>
           <text class='popularActivityTitle'>{{item.title}}</text>
+          <view class='publisherInfo'>
+            
+          </view>
         </swiper-item>
       </block>
     </swiper>

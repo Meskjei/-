@@ -1,6 +1,6 @@
 {
   "pages": [
-    "Pages/login/login",
-    "Pages/home/home"
+    "Pages/home/home",
+    "Pages/login/login"    
   ]
 }
