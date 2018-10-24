@@ -4,11 +4,7 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
-    let that = this
-    // 引入 BaaS SDK
-    require('./utils/sdk-v1.9.0')
-    let clientId = this.globalData.clientId
-    wx.BaaS.init(clientId)
+    
   },
 
   /**
@@ -30,9 +26,5 @@ App({
    */
   onError: function (msg) {
     
-  },
-  globalData: {
-    clientId: '46408eb85ce79773f291',
-    tableId: 55328,
   }
 })
