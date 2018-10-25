@@ -83,7 +83,7 @@ function updateSelfData(newData, cb){
 
 function uploadFile(filePath, categoryName,cb){
   let MyFile = new wx.BaaS.File();
-  let metaData = { categoryName: 'SDK' };
+  let metaData = { categoryName: categoryName };
   let fileParams = { filePath: filePath };
   MyFile.upload(fileParams, metaData).then(res => {
     cb(res);
