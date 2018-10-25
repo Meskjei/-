@@ -1,3 +1,4 @@
 <!--Pages/club/club.wxml-->
 
 <button bindtap='produceQRcode'>生成二维码</button>
+<view class='test' style='background-image:url({{QRcode}}); background-repeat: no-repeat;'></view>

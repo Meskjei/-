@@ -24,7 +24,7 @@ Page({
     db_utils.QRcode(QRtype, params, (res,code)=>{
       console.log(res);
       console.log(code);
-      this.setDate({
+      this.setData({
         QRcode: code
       })
     })
