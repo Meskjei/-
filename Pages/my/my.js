@@ -5,7 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    functionType: [
+      {
+        functionName:'扫码签到',
+        functionIconPath: '../../images/scan.png'
+      }, {
+        functionName: '上传材料',
+        functionIconPath: '../../images/update.png'
+      }
+    ]  //功能栏功能类型
   },
 
   /**

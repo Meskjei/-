@@ -1,6 +1,26 @@
 <!--Pages/my/my.wxml-->
 <view class='container'>
+  <!--用户信息容器-->
   <view class='userInfoContainer'>
-  
+    <!--用户信息-->
+    <view class='uesrInfo'>
+      <!--用户头像-->
+      <view class='userInfo-left'>
+        <image class='userAvatar' src='../../images/98.jpg'></image>
+      </view>
+      <!--用户名和年级-->
+      <view class='userInfo-right'>
+        <text class='userName'>黄嘉成</text>
+        <text class='userDetail'>数学与信息学院&软件学院 软件工程 大三</text>
+      </view>
+    </view>
+  </view>
+  <view class='functionBar'>
+    <block wx:for='{{functionType}}'>
+      <view class='function'>
+        <image src='{{item.functionIconPath}}'></image>
+        <text>{{item.functionName}}</text>
+      </view>
+    </block>
   </view>
 </view>

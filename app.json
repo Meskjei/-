@@ -16,5 +16,8 @@
       "iconPath": "images/my1.png",
       "selectedIconPath": "images/my2.png"
     }]
+  },
+  "window": {
+    "navigationStyle": "custom"
   }
 }
