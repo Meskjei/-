@@ -1,4 +1,5 @@
 // Pages/my/my.js
+const db_utils = require('../../utils/db_utils');
 Page({
 
   /**
@@ -13,7 +14,8 @@ Page({
         functionName: '上传材料',
         functionIconPath: '../../images/update.png'
       }
-    ]  //功能栏功能类型
+    ],  //功能栏功能类型
+    categoryName:"审核材料"
   },
 
   /**
@@ -70,5 +72,32 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  scanAndUpload:function(res){
+    let index = res.currentTarget.dataset.index;
+    switch(index){
+      case 0: wx.scanCode({
+        success(res) {
+          console.log(res);
+        },
+        fail(res) {
+          console.log(res);
+          wx.showToast({
+            title: '网络故障',
+            image: '../image/netError.png'
+          });
+        }
+      })
+      case 1: wx.chooseImage({
+        success(res) {
+          let that = this;
+          const tempFilePaths = res.tempFilePaths;
+          db_utils.uploadFile(tempFilePaths,that.data.categoryName,(res)=>{
+            console.log(res);
+          })
+        }
+      })
+    }
+    
   }
 })
