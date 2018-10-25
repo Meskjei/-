@@ -1,0 +1,5 @@
+<template name='backBtn' >
+  <view class='backBtnContainer' bindtap='goBack'>
+    <image src='../../images/back.png'></image>
+  </view>
+</template>

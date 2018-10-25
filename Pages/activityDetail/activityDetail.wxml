@@ -1,0 +1,22 @@
+<!--Pages/activityDetail/activityDetail.wxml-->
+<import src='../../utils/backBtn.wxml' />
+<template is='backBtn'></template>
+
+<view class='container'>
+  <view class='activityImagesContainer'>
+    <swiper class='activityImages'>
+      <swiper-item>
+        <image src='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3564877025,796183547&fm=26&gp=0.jpg'></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class='userInfoContainer'>
+    <image class='userAvatar' src='{{activity.publisher.avatar}}'></image>
+    <text class='userName'>{{activity.publisher.publisherName}}</text>
+  </view>
+  <view class='infoContainer'>
+    <text class='infoTitle'>{{activity.title}}</text>
+    <text class='infoContent'>{{activity.content}}</text>
+  </view>
+</view>

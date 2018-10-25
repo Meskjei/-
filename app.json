@@ -2,20 +2,24 @@
   "pages": [
     "Pages/home/home",
     "Pages/login/login",
-    "Pages/my/my"
+    "Pages/my/my",
+    "Pages/activityDetail/activityDetail"
   ],
   "tabBar": {
-    "list": [{
-      "pagePath": "Pages/home/home",
-      "text": "首页",
-      "iconPath": "images/home1.png",
-      "selectedIconPath": "images/home2.png"
-    },{
-      "pagePath": "Pages/my/my",
-      "text": "我的",
-      "iconPath": "images/my1.png",
-      "selectedIconPath": "images/my2.png"
-    }]
+    "list": [
+      {
+        "pagePath": "Pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home1.png",
+        "selectedIconPath": "images/home2.png"
+      },
+      {
+        "pagePath": "Pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my1.png",
+        "selectedIconPath": "images/my2.png"
+      }
+    ]
   },
   "window": {
     "navigationStyle": "custom"

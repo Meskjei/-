@@ -16,7 +16,7 @@
     <text class='title'>热门活动</text>
     <swiper>
       <block wx:for='{{activities}}'>
-        <swiper-item class='popularActivity'>
+        <swiper-item class='popularActivity' bindtap='toDetail' data-activity='{{item}}'>
           <image src='http://img3.imgtn.bdimg.com/it/u=3930318509,1734424700&fm=26&gp=0.jpg' mode='aspectFill'></image>
           <text class='popularActivityTitle'>{{item.title}}</text>
           <view class='publishInfo'>
@@ -33,7 +33,7 @@
   <view class='activityContainer'>
     <text class='title'>{{activityType[currentActivityIndex]}}活动</text>
     <block wx:for='{{activities}}'>
-      <view class='activity' bindtap='toDetail'>
+      <view class='activity' bindtap='toDetail' data-activity='{{item}}'>
         <view class='activity-left'>
           <text class='activityTitle'>{{item.title}}</text>
           <text class='activityBrief'>{{item.content}}</text>

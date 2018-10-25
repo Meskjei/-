@@ -34,5 +34,6 @@ App({
   globalData: {
     clientId: '46408eb85ce79773f291',
     newsTableId: 55410,
+    currentActivity: {} //当前看的活动详情
   }
 })

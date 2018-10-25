@@ -1,0 +1,83 @@
+/* Pages/activityDetail/activityDetail.wxss */
+@import '../../utils/backBtn.wxss';
+
+page{
+  background-color: white;
+  width: 100%;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+/*头部图片样式*/
+.activityImagesContainer{
+  width: 100%;
+}
+
+.activityImages{
+  width: 100%;
+  height: 500rpx;
+}
+
+.activityImages swiper-item{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/*用户信息样式*/
+.userInfoContainer{
+  position: absolute;
+  top: 300rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.userAvatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.userName{
+  font-size: 30rpx;
+}
+
+/*活动内容样式*/
+.infoContainer{
+  top: 330rpx;
+  position: absolute;
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-radius: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.infoTitle{
+  display: block;
+  margin-top: 90rpx;
+  font-size: 38rpx;
+}
+
+.activityImages swiper-item image{
+  width: 100%;
+  height: 100%;
+}
+
+.infoContent{
+  display: block;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
