@@ -17,7 +17,7 @@
   </view>
   <view class='functionBar'>
     <block wx:for='{{functionType}}'>
-      <view class='function'>
+      <view class='function' bindtap='scanAndUpload' data-index='{{index}}'>
         <image src='{{item.functionIconPath}}'></image>
         <text>{{item.functionName}}</text>
       </view>
