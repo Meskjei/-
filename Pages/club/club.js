@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    QRcode:null
   },
 
   /**
@@ -16,14 +16,17 @@ Page({
 
   },
   produceQRcode:function(){
-    const QRtype = 'wxacodeunlimit';
+    const QRtype = 'wxaqrcode';
     const params = {
-      scene: 'A',
-      page: 'pages/signSuccess/signSuccess',
+      path: '../signSuccess/signSuccess?id=123456',
       width: 250
     };
-    db_utils.QRcode(QRtype, params, (res)=>{
+    db_utils.QRcode(QRtype, params, (res,code)=>{
       console.log(res);
+      console.log(code);
+      this.setDate({
+        QRcode: code
+      })
     })
   }
 })

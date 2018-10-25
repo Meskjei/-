@@ -137,7 +137,7 @@ function deleteFile(fileID, cb){
 }
 
 function QRcode(QRtype,params,cb){
-  new wx.BaaS.getWXACode(QRtype, params).then(res => {
+  wx.BaaS.getWXACode(QRtype, params).then(res => {
     cb(null, res.image)
   }).catch(err => {
     cb(err)
