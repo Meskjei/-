@@ -33,7 +33,7 @@
   <view class='activityContainer'>
     <text class='title'>{{activityType[currentActivityIndex]}}活动</text>
     <block wx:for='{{activities}}'>
-      <view class='activity'>
+      <view class='activity' bindtap='toDetail'>
         <view class='activity-left'>
           <text class='activityTitle'>{{item.title}}</text>
           <text class='activityBrief'>{{item.content}}</text>
