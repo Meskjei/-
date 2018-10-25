@@ -1,6 +1,7 @@
 {
   "pages": [
     "Pages/club/club",
+    "Pages/signSuccess/signSuccess",
     "Pages/home/home",
     "Pages/login/login",
     "Pages/my/my"

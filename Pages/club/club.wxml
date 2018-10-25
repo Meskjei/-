@@ -1,2 +1,3 @@
 <!--Pages/club/club.wxml-->
-<text>testtest</text>
+
+<button bindtap='produceQRcode'>生成二维码</button>

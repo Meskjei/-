@@ -136,12 +136,13 @@ function deleteFile(fileID, cb){
   });
 }
 
-module.exports.searchData = searchData;
-module.exports.updateData = updateData;
-module.exports.getData = getData;
-module.exports.getUserData = getUserData;
-module.exports.updateSelfData = updateSelfData;
-module.exports.uploadFile = uploadFile;
-module.exports.createRecord = createRecord;
-module.exports.deleteRecord = deleteRecord;
-module.exports.deleteFile = deleteFile;
+function QRcode(QRtype,params,cb){
+  new wx.BaaS.getWXACode(QRtype, params).then(res => {
+    cb(null, res.image)
+  }).catch(err => {
+    cb(err)
+  })
+}
+
+module.exports = { searchData, updateData, getData, getUserData, updateSelfData, 
+  uploadFile, createRecord, deleteRecord, deleteFile, QRcode}
