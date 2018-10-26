@@ -34,6 +34,11 @@ App({
   globalData: {
     clientId: '46408eb85ce79773f291',
     newsTableId: 55410,
-    currentActivity: {} //当前看的活动详情
+    clubTableId: 55402,
+    stuTableId: 55401,
+    eduTableId: 55403,
+    currentActivity: {}, //当前看的活动详情
+    userInfo:{},
+    userType:null,
   }
 })

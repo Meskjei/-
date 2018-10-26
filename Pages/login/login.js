@@ -1,5 +1,5 @@
-const util = require('../../utils/utils');
-const db_util = require('../../utils/db_utils');
+const utils = require('../../utils/utils');
+const db_utils = require('../../utils/db_utils');
 const app = getApp();
 Page({
 
@@ -8,7 +8,7 @@ Page({
    */
   data: {
     password: null,
-    username: null
+    userName: null
   },
 
   /**
@@ -18,9 +18,9 @@ Page({
 
   },
 
-  getUsername: function (e) {
+  getUserName: function (e) {
     this.setData({
-      username: e.detail.value
+      userName: e.detail.value
     })
   },
   getPassword: function (e) {
@@ -29,15 +29,36 @@ Page({
     })
   },
   loginClick: function (e) {
-    app.globalData.userInfo = { username: this.data.username, password: this.data.password }
-    if (app.globalData.userInfo.username == 'interviewer' && app.globalData.userInfo.password == 'scau2018!') {
-      util.showSuccess('登录成功');
-      wx.redirectTo({
-        url: '../home/home',
-      })
+    let tableId;
+    let sign = this.data.userName[0];
+    app.globalData.userType = sign;
+    console.log(sign);
+    switch (sign) {
+      case 's': tableId = app.globalData.stuTableId;
+        break;
+      case 'c': tableId = app.globalData.clubTableId;
+        break;
+      case 'e': tableId = app.globalData.eduTableId;
+        break;
+      default: utils.showMessage("输入账号错误");
+        break;
     }
-    else {
-      util.showModel('登录失败', '账户或密码错误');
-    }
+    let query = new wx.BaaS.Query();
+    query.compare('userName', '=', this.data.userName);
+    query.compare('password', '=', this.data.password);
+    db_utils.searchData(tableId, query,(res)=>{
+      console.log(res.data.objects);
+      if(res.data.objects==""){
+        utils.showModel('登录失败', '账户或密码错误');
+      }
+      else{
+        app.globalData.userInfo = res.data.objects[0];
+        utils.showSuccess('登录成功');
+        wx.switchTab({
+          url: '../my/my',
+        })
+      }
+      console.log(app.globalData.userInfo);
+    })
   }
 })
