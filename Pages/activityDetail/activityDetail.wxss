@@ -35,7 +35,7 @@ page{
 /*用户信息样式*/
 .userInfoContainer{
   position: absolute;
-  top: 300rpx;
+  top: 290rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;

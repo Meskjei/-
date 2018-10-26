@@ -23,4 +23,22 @@
       </view>
     </block>
   </view>
+
+  <view class='settingContainer'>
+    <view class='setting'>
+      <view class='setting-left'>
+        <image src='../../images/myParticipate.png'></image>
+        <text>我参加的活动</text>
+      </view>
+      <text>></text>
+    </view>
+
+    <view class='setting'>
+      <view class='setting-left'>
+        <image src='../../images/myMarks.png'></image>
+        <text>我的综测分数</text>
+      </view>
+      <text>></text>
+    </view>
+  </view>
 </view>
