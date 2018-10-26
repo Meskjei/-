@@ -31,6 +31,7 @@ Page({
   loginClick: function (e) {
     let tableId;
     let sign = this.data.userName[0];
+    app.globalData.userType = sign;
     console.log(sign);
     switch (sign) {
       case 's': tableId = app.globalData.stuTableId;

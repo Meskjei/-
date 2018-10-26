@@ -38,6 +38,7 @@ App({
     stuTableId: 55401,
     eduTableId: 55403,
     currentActivity: {}, //当前看的活动详情
-    userInfo:{}
+    userInfo:{},
+    userType:null,
   }
 })
