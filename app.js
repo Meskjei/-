@@ -33,7 +33,7 @@ App({
   },
   globalData: {
     clientId: '46408eb85ce79773f291',
-    newsTableId: 55410,
+    activityTableId: 55410,
     clubTableId: 55402,
     stuTableId: 55401,
     eduTableId: 55403,

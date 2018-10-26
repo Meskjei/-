@@ -58,7 +58,7 @@ Page({
    */
   getDataPerPage: function(query) {
     let that = this;
-    let Product = new wx.BaaS.TableObject(app.globalData.newsTableId);
+    let Product = new wx.BaaS.TableObject(app.globalData.activityTableId);
     if (query == undefined) {
       query = new wx.BaaS.Query();
     }
