@@ -38,7 +38,8 @@ App({
     stuTableId: 55401,
     eduTableId: 55403,
     currentActivity: {}, //当前看的活动详情
-    userInfo:{},
-    userType:null,
+    userInfo:{},  //当前用户信息
+    userType:null,  //当前用户种类
+    userScore: {} //当前用户综测分数
   }
 })

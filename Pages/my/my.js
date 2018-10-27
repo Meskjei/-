@@ -1,4 +1,5 @@
 // Pages/my/my.js
+const app =getApp();
 const db_utils = require('../../utils/db_utils');
 Page({
 
@@ -15,16 +16,28 @@ Page({
         functionIconPath: '../../images/update.png'
       }
     ],  //功能栏功能类型
-    categoryName:'审核材料'
+    categoryName:'审核材料',
+    userInfo: {}  //当前用户信息
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(app.globalData.userInfo);
+    this.setData({
+      userInfo: app.globalData.userInfo
+    });
   },
 
+  /**
+   * 前往我的综测分数
+   */
+  toMyMarks: function(event){
+    wx.navigateTo({
+      url: '../myMarks/myMarks',
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
