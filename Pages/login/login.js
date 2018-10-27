@@ -55,18 +55,7 @@ Page({
         wx.switchTab({
           url: '../my/my',
         });
-        let query = new wx.BaaS.Query();
-        query.compare('studentId', '=', app.globalData.userInfo.id);
-        db_utils.searchData(app.globalData.scoreTableId, query, (res) => {
-          if (res.data.objects == "") {
-            utils.showModel('网络故障', '获取用户分数失败');
-          }
-          else{
-            app.globalData.userInfo.score = res.data.objects[0];
-          }
-        })
       }
-      console.log(app.globalData.userInfo);
     })
   }
 })

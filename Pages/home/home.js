@@ -45,16 +45,17 @@ Page({
   onShow: function(){
     this.onPullDownRefresh();
   },
-  onPullDownRefresh: function(options) {
-    this.data.activities = [];
-    this.data.offset = 0;
-    this.getDataPerPage();
-    wx.stopPullDownRefresh();
-  },
   onReachBottom: function(options) {
     if (this.data.hasNext == true) {
       this.getDataPerPage();
     }
+  },
+
+  onPullDownRefresh: function (options) {
+    this.data.activities = [];
+    this.data.offset = 0;
+    this.getDataPerPage();
+    wx.stopPullDownRefresh();
   },
   /**
    * 分页加载

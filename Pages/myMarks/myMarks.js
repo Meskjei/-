@@ -1,5 +1,6 @@
 import * as echarts from '../ec-canvas/echarts';
-
+const utils = require('../../utils/utils');
+const db_utils = require('../../utils/db_utils');
 const app = getApp();
 
 function initChart(canvas, width, height) {
@@ -20,7 +21,7 @@ function initChart(canvas, width, height) {
     },
     legend: {
       bottom: 5,
-      data: ['2016', '2017'],
+      data: [app.globalData.userScore.firstYear.slice(0, 4), app.globalData.userScore.secondYear.slice(0, 4), app.globalData.userScore.thirdYear.slice(0, 4), app.globalData.userScore.fourthYear.slice(0, 4)],
       itemGap: 20,
       textStyle: {
         color: '#fff',
@@ -67,19 +68,38 @@ function initChart(canvas, width, height) {
         }
       }
     },
-    series: [{
-        name: '2016',
+    series: [
+      {
+        name: app.globalData.userScore.firstYear.slice(0, 4),
         type: 'radar',
-        data: [[7, 8, 4]],
+        data: [app.globalData.userScore.firstYearScore],
         label: {
           show: true,
           position: 'inside'
         }
       },
       {
-        name: '2017',
+        name: app.globalData.userScore.secondYear.slice(0, 4),
         type: 'radar',
-        data: [[3, 4, 4]],
+        data: [app.globalData.userScore.secondYearScore],
+        label: {
+          show: true,
+          position: 'inside'
+        }
+      },
+      {
+        name: app.globalData.userScore.thirdYear.slice(0, 4),
+        type: 'radar',
+        data: [app.globalData.userScore.thirdYearScore],
+        label: {
+          show: true,
+          position: 'inside'
+        }
+      },
+      {
+        name: app.globalData.userScore.fourthYear.slice(0, 4),
+        type: 'radar',
+        data: [app.globalData.userScore.fourthYearScore],
         label: {
           show: true,
           position: 'inside'
@@ -93,6 +113,8 @@ function initChart(canvas, width, height) {
 }
 
 Page({
+  onLoad: function (options) {
+  },
   onShareAppMessage: function(res) {
     return {
       title: 'ECharts 可以在微信小程序中使用啦！',
@@ -106,6 +128,4 @@ Page({
       onInit: initChart
     }
   },
-
-  onReady() {}
 });
