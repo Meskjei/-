@@ -1,108 +1,90 @@
 import * as echarts from '../ec-canvas/echarts';
 
-let chart = null;
+const app = getApp();
 
 function initChart(canvas, width, height) {
-  chart = echarts.init(canvas, null, {
+  const chart = echarts.init(canvas, null, {
     width: width,
     height: height
   });
   canvas.setChart(chart);
 
   var option = {
-    color: ['#37a2da', '#32c5e9', '#67e0e3'],
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+    backgroundColor: '#161627',
+    title: {
+      text: '历年综测评分',
+      left: 'left',
+      textStyle: {
+        color: '#eee'
       }
     },
     legend: {
-      data: ['智育', '德育', '体育']
+      bottom: 5,
+      data: ['2016', '2017'],
+      itemGap: 20,
+      textStyle: {
+        color: '#fff',
+        fontSize: 14
+      },
+      selectedMode: 'single'
     },
-    grid: {
-      left: 20,
-      right: 20,
-      bottom: 10,
-      top: 10,
-      containLabel: true
-    },
-    xAxis: [
-      {
-        type: 'value',
-        
-        axisLine: {
-          lineStyle: {
-            color: '#999'
-          }
+    radar: {
+      indicator: [{
+          name: '智育',
+          max: 10
         },
-        axisLabel: {
-          color: '#666'
+        {
+          name: '德育',
+          max: 10
+        },
+        {
+          name: '体育',
+          max: 5
+        }
+      ],
+      shape: 'circle',
+      splitNumber: 5,
+      name: {
+        textStyle: {
+          color: 'rgb(238, 197, 102)'
+        }
+      },
+      splitLine: {
+        lineStyle: {
+          color: [
+            'rgba(238, 197, 102, 0.1)', 'rgba(238, 197, 102, 0.2)',
+            'rgba(238, 197, 102, 0.4)', 'rgba(238, 197, 102, 0.6)',
+            'rgba(238, 197, 102, 0.8)', 'rgba(238, 197, 102, 1)'
+          ].reverse()
+        }
+      },
+      splitArea: {
+        show: false
+      },
+      axisLine: {
+        lineStyle: {
+          color: 'rgba(238, 197, 102, 0.5)'
         }
       }
-    ],
-    yAxis: [
-      {
-        type: 'category',
-        axisTick: { show: false },
-        data: ['2016', '2017', '2018', '2019'],
-        axisLine: {
-          lineStyle: {
-            color: '#999'
-          }
-        },
-        axisLabel: {
-          color: '#666'
-        }
-      }
-    ],
-    series: [
-      
-      {
-        name: '智育',
-        type: 'bar',
+    },
+    series: [{
+        name: '2016',
+        type: 'radar',
+        data: [[7, 8, 4]],
         label: {
-          normal: {
-            show: true,
-          }
-        },
-        data: [300, 270, 340, 344, 300, 320, 310],
-        itemStyle: {
-          // emphasis: {
-          //   color: '#37a2da'
-          // }
+          show: true,
+          position: 'inside'
         }
       },
       {
-        name: '体育',
-        type: 'bar',
+        name: '2017',
+        type: 'radar',
+        data: [[3, 4, 4]],
         label: {
-          normal: {
-            show: true
-          }
-        },
-        data: [120, 102, 141, 174, 190, 250, 220],
-        itemStyle: {
-          // emphasis: {
-          //   color: '#32c5e9'
-          // }
+          show: true,
+          position: 'inside'
         }
-      },
-      {
-        name: '德育',
-        type: 'bar',
-        label: {
-          normal: {
-            show: true
-          }
-        },
-        data: [120, 102, 141, 174, 190, 250, 220],
-        itemStyle: {
-          // emphasis: {
-          //   color: '#32c5e9'
-          // }
-        }
-      }, 
+      }
     ]
   };
 
@@ -111,12 +93,12 @@ function initChart(canvas, width, height) {
 }
 
 Page({
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function(res) {
     return {
       title: 'ECharts 可以在微信小程序中使用啦！',
       path: '/pages/index/index',
-      success: function () { },
-      fail: function () { }
+      success: function() {},
+      fail: function() {}
     }
   },
   data: {
@@ -125,18 +107,5 @@ Page({
     }
   },
 
-  onReady() {
-    setTimeout(function () {
-      // 获取 chart 实例的方式
-      console.log(chart)
-    }, 2000);
-  },
-  /**
-   * 返回上一页监听函数
-   */
-  goBack: function (event) {
-    wx.navigateBack({
-      delta: 1
-    });
-  },
+  onReady() {}
 });

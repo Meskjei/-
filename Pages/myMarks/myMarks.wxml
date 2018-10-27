@@ -1,7 +1,7 @@
 <!--Pages/myMarks/myMarks.wxml-->
-<!--index.wxml-->
 <import src='../../utils/backBtn.wxml' />
 <template is='backBtn'></template>
+<!--index.wxml-->
 <view class="container">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
 </view>
