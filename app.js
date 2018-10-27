@@ -33,10 +33,11 @@ App({
   },
   globalData: {
     clientId: '46408eb85ce79773f291',
-    newsTableId: 55410,
+    activityTableId: 55410,
     clubTableId: 55402,
     stuTableId: 55401,
     eduTableId: 55403,
+    scoreTableId: 55619,
     currentActivity: {}, //当前看的活动详情
     userInfo:{},  //当前用户信息
     userType:null,  //当前用户种类
