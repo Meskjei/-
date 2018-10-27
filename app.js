@@ -37,6 +37,7 @@ App({
     clubTableId: 55402,
     stuTableId: 55401,
     eduTableId: 55403,
+    scoreTableId: 55619,
     currentActivity: {}, //当前看的活动详情
     userInfo:{},
     userType:null,

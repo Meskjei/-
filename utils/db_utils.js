@@ -10,7 +10,7 @@ function setQuery(tableObject, query) {
 
 function searchData(tableID, query, cb) {
   let tableObject = createTableObject(tableID);
-  console.log(tableID);
+  console.log("tableId is:"+tableID);
   if (query != undefined) {
     tableObject = setQuery(tableObject, query);
   }

@@ -32,7 +32,6 @@ Page({
     let tableId;
     let sign = this.data.userName[0];
     app.globalData.userType = sign;
-    console.log(sign);
     switch (sign) {
       case 's': tableId = app.globalData.stuTableId;
         break;
@@ -47,7 +46,6 @@ Page({
     query.compare('userName', '=', this.data.userName);
     query.compare('password', '=', this.data.password);
     db_utils.searchData(tableId, query,(res)=>{
-      console.log(res.data.objects);
       if(res.data.objects==""){
         utils.showModel('登录失败', '账户或密码错误');
       }
@@ -56,6 +54,16 @@ Page({
         utils.showSuccess('登录成功');
         wx.switchTab({
           url: '../my/my',
+        });
+        let query = new wx.BaaS.Query();
+        query.compare('studentId', '=', app.globalData.userInfo.id);
+        db_utils.searchData(app.globalData.scoreTableId, query, (res) => {
+          if (res.data.objects == "") {
+            utils.showModel('网络故障', '获取用户分数失败');
+          }
+          else{
+            app.globalData.userInfo.score = res.data.objects[0];
+          }
         })
       }
       console.log(app.globalData.userInfo);
