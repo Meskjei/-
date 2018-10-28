@@ -1,13 +1,15 @@
 {
   "pages": [
     "Pages/chooseActivity/chooseActivity",
-    "Pages/home/home",
     "Pages/login/login",
     "Pages/myMarks/myMarks",
-    "Pages/club/club",
+    "Pages/home/home",
+    "Pages/checkIn/checkIn",
     "Pages/signSuccess/signSuccess",
     "Pages/my/my",
-    "Pages/activityDetail/activityDetail"
+    "Pages/activityDetail/activityDetail",
+    "Pages/publishActivity/publishActivity",
+    "Pages/myActivity/myActivity"
   ],
   "tabBar": {
     "list": [

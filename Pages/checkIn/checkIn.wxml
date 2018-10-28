@@ -1,0 +1,11 @@
+<!--Pages/club/club.wxml-->
+<view class='container'>
+  <view class='logoArea'>
+    <image class='logo' src='../../images/logo.png'></image>
+    <text class='appName'>加分易</text>
+  </view>
+  <view class='QRCodeContainer'>
+    <image src='{{QRcode}}'></image>
+  </view>
+</view>
+

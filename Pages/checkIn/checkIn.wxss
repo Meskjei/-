@@ -1,0 +1,45 @@
+/* Pages/club/club.wxss */
+page{
+  height: 100%;
+  background-color: #f8f8f8;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.logoArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 140rpx;
+}
+
+.logo{
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 10rpx;
+}
+
+.QRCodeContainer{
+  position: absolute;
+  top: 360rpx;
+  width: 80%;
+  background-color: white;
+  height: 700rpx;
+  box-shadow: 1rpx 2rpx 3rpx rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.QRCodeContainer image{
+  width: 500rpx;
+  height: 500rpx;
+}

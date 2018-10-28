@@ -1,5 +1,0 @@
-/* Pages/club/club.wxss */
-.test{
-  width: 100%;
-  height: 600rpx;
-}

@@ -1,0 +1,46 @@
+<!--Pages/publishActivity/publishActivity.wxml-->
+<import src='../../utils/backBtn.wxml' />
+<template is='backBtn'></template>
+<view class='container'>
+  <!--头部-->
+  <view class='header'>
+    <!--页面标题-->
+    <text class='title'>发布活动</text>
+    <!--发布按钮-->
+    <view class='publishBtn'>
+      <image src='../../images/publishBtn.png'></image>
+    </view>
+  </view>
+  <!--活动表单-->
+  <form class='activityForm'>
+    <!--活动标题-->
+    <view class='form-item'>
+      <input class='activityTitle' name='activityTitle' placeholder='请在此处输入活动标题'></input>
+    </view>
+    <!--活动内容-->
+    <view class='form-item'>
+      <textarea class='activityContent' name='activityContent' placeholder='请在此处输入活动内容' maxlength='-1'></textarea>
+    </view>
+
+    <!--添加图片-->
+    <view class='form-item'>
+      <scroll-view scroll-x>
+        <view class='flexContainer'>
+          <!--添加图片按钮-->
+          <view class='addPicBtn' bindtap='addPic'>
+            <image src='../../images/addPic.png'></image>
+          </view>
+          <!--图片-->
+          <block wx:for='{{pictures}}'>
+            <view class='pictureContainer'>
+              <view class='cancelBtn' bindtap='cancelPic' data-index='{{index}}'>
+                <image src='../../images/cancel.png'></image>
+              </view>
+              <image src='{{item.path}}'></image>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </form>
+</view>
