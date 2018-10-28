@@ -6,7 +6,8 @@
     "Pages/club/club",
     "Pages/signSuccess/signSuccess",
     "Pages/my/my",
-    "Pages/activityDetail/activityDetail"
+    "Pages/activityDetail/activityDetail",
+    "Pages/publishActivity/publishActivity"
   ],
   "tabBar": {
     "list": [
