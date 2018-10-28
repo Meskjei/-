@@ -47,20 +47,20 @@ Page({
   },
   onReachBottom: function(options) {
     if (this.data.hasNext == true) {
-      this.getDataPerPage();
+      this.getDataPerPage(undefined);
     }
   },
 
   onPullDownRefresh: function (options) {
     this.data.activities = [];
     this.data.offset = 0;
-    this.getDataPerPage();
+    this.getDataPerPage(undefined);
     wx.stopPullDownRefresh();
   },
   /**
    * 分页加载
    */
-  getDataPerPage: function(query) {
+  getDataPerPage: function (query) {
     let that = this;
     let Product = new wx.BaaS.TableObject(app.globalData.activityTableId);
     if (query == undefined) {

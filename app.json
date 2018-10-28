@@ -1,8 +1,9 @@
 {
   "pages": [
+    "Pages/chooseActivity/chooseActivity",
+    "Pages/home/home",
     "Pages/login/login",
     "Pages/myMarks/myMarks",
-    "Pages/home/home",
     "Pages/club/club",
     "Pages/signSuccess/signSuccess",
     "Pages/my/my",
