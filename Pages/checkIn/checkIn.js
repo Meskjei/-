@@ -13,7 +13,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.produceQRcode();
+    wx.setScreenBrightness({
+      value: 1,
+    });
   },
   produceQRcode:function(){
     const QRtype = 'wxaqrcode';
@@ -22,7 +25,6 @@ Page({
       width: 250
     };
     db_utils.QRcode(QRtype, params, (res,code)=>{
-      console.log(res);
       console.log(code);
       this.setData({
         QRcode: code
