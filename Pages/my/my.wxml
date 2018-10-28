@@ -25,15 +25,15 @@
   </view>
 
   <view class='settingContainer'>
-    <view class='setting' >
+    <view class='setting' wx:if='{{userType != "e"}}'>
       <view class='setting-left'>
         <image src='../../images/myParticipate.png'></image>
-        <text>我参加的活动</text>
+        <text>我{{userType == 's' ? '参加' : '发布'}}的活动</text>
       </view>
       <text>></text>
     </view>
 
-    <view class='setting' bindtap='toMyMarks'>
+    <view class='setting' bindtap='toMyMarks' wx:if='{{userType == "s"}}'>
       <view class='setting-left'>
         <image src='../../images/myMarks.png'></image>
         <text>我的综测分数</text>

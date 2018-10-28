@@ -11,16 +11,19 @@ function initChart(canvas, width, height) {
   canvas.setChart(chart);
 
   var option = {
-    backgroundColor: '#161627',
+    backgroundColor: '#3e475a',
     title: {
       text: '历年综测评分',
-      left: 'left',
+      left: 'center',
+      bottom: 32,
       textStyle: {
-        color: '#eee'
+        color: '#fff',
+        fontSize: 14,
+        fontWeight: 'bold'
       }
     },
     legend: {
-      bottom: 5,
+      bottom: 0,
       data: [app.globalData.userScore.firstYear.slice(0, 4), app.globalData.userScore.secondYear.slice(0, 4), app.globalData.userScore.thirdYear.slice(0, 4), app.globalData.userScore.fourthYear.slice(0, 4)],
       itemGap: 20,
       textStyle: {
@@ -47,7 +50,7 @@ function initChart(canvas, width, height) {
       splitNumber: 5,
       name: {
         textStyle: {
-          color: 'rgb(238, 197, 102)'
+          color: 'rgb(255, 255, 255)'
         }
       },
       splitLine: {
@@ -68,14 +71,23 @@ function initChart(canvas, width, height) {
         }
       }
     },
-    series: [
-      {
+    series: [{
         name: app.globalData.userScore.firstYear.slice(0, 4),
         type: 'radar',
         data: [app.globalData.userScore.firstYearScore],
         label: {
           show: true,
           position: 'inside'
+        },
+        itemStyle: {
+          normal: {
+            color: '#F9713C'
+          }
+        },
+        areaStyle: {
+          normal: {
+            opacity: 0.1
+          }
         }
       },
       {
@@ -85,6 +97,16 @@ function initChart(canvas, width, height) {
         label: {
           show: true,
           position: 'inside'
+        },
+        itemStyle: {
+          normal: {
+            color: '#F9713C'
+          }
+        },
+        areaStyle: {
+          normal: {
+            opacity: 0.1
+          }
         }
       },
       {
@@ -94,6 +116,16 @@ function initChart(canvas, width, height) {
         label: {
           show: true,
           position: 'inside'
+        },
+        itemStyle: {
+          normal: {
+            color: '#F9713C'
+          }
+        },
+        areaStyle: {
+          normal: {
+            opacity: 0.1
+          }
         }
       },
       {
@@ -103,6 +135,16 @@ function initChart(canvas, width, height) {
         label: {
           show: true,
           position: 'inside'
+        },
+        itemStyle: {
+          normal: {
+            color: '#F9713C'
+          }
+        },
+        areaStyle: {
+          normal: {
+            opacity: 0.1
+          }
         }
       }
     ]
@@ -113,8 +155,7 @@ function initChart(canvas, width, height) {
 }
 
 Page({
-  onLoad: function (options) {
-  },
+  onLoad: function(options) {},
   onShareAppMessage: function(res) {
     return {
       title: 'ECharts 可以在微信小程序中使用啦！',
@@ -127,5 +168,13 @@ Page({
     ec: {
       onInit: initChart
     }
+  },
+  /**
+   * 返回上一页监听函数
+   */
+  goBack: function(event) {
+    wx.navigateBack({
+      delta: 1
+    });
   },
 });

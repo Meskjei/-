@@ -1,6 +1,7 @@
 <!--Pages/myMarks/myMarks.wxml-->
 <import src='../../utils/backBtn.wxml' />
 <template is='backBtn'></template>
+<text class='title'>综测分数</text>
 <!--index.wxml-->
 <view class="container">
   <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
