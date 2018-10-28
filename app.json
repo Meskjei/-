@@ -7,7 +7,8 @@
     "Pages/signSuccess/signSuccess",
     "Pages/my/my",
     "Pages/activityDetail/activityDetail",
-    "Pages/publishActivity/publishActivity"
+    "Pages/publishActivity/publishActivity",
+    "Pages/myActivity/myActivity"
   ],
   "tabBar": {
     "list": [
