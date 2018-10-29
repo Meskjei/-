@@ -1,4 +1,6 @@
 <!--Pages/club/club.wxml-->
+<import src='../../utils/backBtn.wxml'/>
+<template is='backBtn'></template>
 <view class='container'>
   <view class='logoArea'>
     <image class='logo' src='../../images/logo.png'></image>
