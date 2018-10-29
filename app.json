@@ -1,5 +1,6 @@
 {
   "pages": [
+    "Pages/myActivity/myActivity",
     "Pages/chooseActivity/chooseActivity",
     "Pages/login/login",
     "Pages/myMarks/myMarks",
@@ -8,8 +9,7 @@
     "Pages/signSuccess/signSuccess",
     "Pages/my/my",
     "Pages/activityDetail/activityDetail",
-    "Pages/publishActivity/publishActivity",
-    "Pages/myActivity/myActivity"
+    "Pages/publishActivity/publishActivity"
   ],
   "tabBar": {
     "list": [

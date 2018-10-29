@@ -38,6 +38,7 @@ App({
     stuTableId: 55401,
     eduTableId: 55403,
     scoreTableId: 55619,
+    joinActivityTableId: 55602,
     currentActivity: {}, //当前看的活动详情
     userInfo:{},  //当前用户信息
     userType:null,  //当前用户种类
