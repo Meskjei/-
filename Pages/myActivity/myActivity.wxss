@@ -1,14 +1,21 @@
 /* Pages/myActivity/myActivity.wxss */
 @import '../../utils/backBtn.wxss';
+page{
+  position: relative;
+}
 .activityContainer {
-  margin-top: 40rpx;
+  margin-top: 140rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.activityContainer .title {
+.title {
   position: absolute;
   left: 50%;
   margin-left: -200rpx;
-  top: 30rpx;
+  top: -70rpx;
   display: block;
   color: #8d8f90;
   font-size: 40rpx;
@@ -21,13 +28,14 @@
   flex-direction: row;
   justify-content: space-between;
   height: 200rpx;
-  width: 100%;
+  width: 95%;
   margin-bottom: 50rpx;
+  box-sizing: border-box;
 }
 
 .activity-left {
   display: inline-flex;
-  width: 60%;
+  max-width: 60%;
   flex-direction: column;
   justify-content: flex-start;
 }

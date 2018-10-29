@@ -1,8 +1,8 @@
 <!--Pages/myActivity/myActivity.wxml-->
 <import src='../../utils/backBtn.wxml'/>
 <template is='backBtn'></template>
+<text class='title'>我参加的活动</text>
 <view class='activityContainer'>
-    <text class='title'>我参加的活动</text>
     <block wx:for='{{activities}}'>
       <view class='activity' bindtap='toDetail' data-activity='{{item}}'>
         <view class='activity-left'>
