@@ -1,0 +1,4 @@
+<!--Pages/audity/audity.wxml-->
+<text>Pages/audity/audity.wxml</text>
+<button bindtap='audityPass'>审核通过</button>
+<button bindtap='audityFail'>审核未通过</button>

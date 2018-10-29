@@ -1,4 +1,7 @@
 // Pages/publishActivity/publishActivity.js
+const app = getApp();
+const db_utils = require('../../utils/db_utils');
+const utils = require('../../utils/utils');
 Page({
 
   /**
@@ -6,11 +9,29 @@ Page({
    */
   data: {
     pictures: [],  //存放选择的图片对象
+
     activityDate: '',  //当前选择的活动日期
     acitivityTime: '', //当前选择的活动时间
-    acitivityLastTime: '' //当前选择的活动持续时间
+    acitivityLastTime: '', //当前选择的活动持续时间
+
+    categoryName: '活动',
+    actTitle:null,
+    actContent: null,
+    picPath: null
+    
+
   },
 
+  getActTitle: function (e) {
+    this.setData({
+      actTitle: e.detail.value
+    })
+  },
+  getActContent: function (e) {
+    this.setData({
+      actContent: e.detail.value
+    })
+  },
   /**
    * 修改活动时间
    */
@@ -35,21 +56,35 @@ Page({
   /**
    * 添加图片
    */
+  publishAct:function(e){
+    let MyRecord = {
+      title: this.data.actTitle,
+      content: this.data.actContent,
+      publisherName: '校科联',
+      cover: this.data.picPath,
+      scoreType: 'moral',
+      score: 0.2
+      }
+    db_utils.createRecord(app.globalData.activityTableId,MyRecord,(res)=>{
+      console.log(res);
+    })
+  },
   addPic: function(event){
     let that = this;
-    if(this.data.pictures.length >= 9){
-      wx.showToast({
-        title: '图片数超过上限',
-      });
-      return;
-    }
+    // if(this.data.pictures.length >= 9){
+    //   wx.showToast({
+    //     title: '图片数超过上限',
+    //   });
+    //   return;
+    // }
     wx.chooseImage({
-      success: function(res) {
-        let rest = 9 - that.data.pictures.length;
-        if(rest > 0){
-          that.setData({ pictures: that.data.pictures.concat(res.tempFiles.slice(0, rest))});
-          console.log(that.data.pictures);
-        }
+      success(res) {
+        console.log(that.data.categoryName);
+        const tempFilePaths = res.tempFilePaths;
+        db_utils.uploadFile(tempFilePaths[0], that.data.categoryName, (res) => {
+          that.data.picPath = res.data.path;
+          console.log(that.data.picPath);
+        })
       }
     });
   },
