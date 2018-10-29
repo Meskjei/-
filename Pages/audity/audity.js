@@ -1,5 +1,6 @@
-// Pages/chooseActivity/chooseActivity.js
+// Pages/audity/audity.js
 const utils = require('../../utils/utils');
+const db_utils = require('../../utils/db_utils');
 const app = getApp();
 Page({
 
@@ -7,50 +8,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTime:null,
     currentActivityIndex: 0,
     offset: 0, //当前的偏移量
-    activities: [],
-    
+    audityEvents: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
   onShow: function () {
-    let that = this;
-    wx.request({
-      url: 'https://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        that.data.currentTime = new Date(parseInt(res.data.data.t));
-        console.log(that.data.currentTime);
-      },
-      fail(res) {
-        utils.showModel('网络故障', '获取当前时间失败');
-      }
-    })
     this.onPullDownRefresh();
   },
   onReachBottom: function (options) {
     if (this.data.hasNext == true) {
       let query = new wx.BaaS.Query();
-      query.compare('publisherName', '=', '校科联');
-      this.getDataPerPage(query);
+      query.compare('college', '=', '数学与信息学院');
+      this.getDataPerPage(undefined);
     }
   },
 
   onPullDownRefresh: function (options) {
-    this.data.activities = [];
+    this.data.audityEvents = [];
     this.data.offset = 0;
-    let query = new wx.BaaS.Query();
-    query.compare('publisherName', '=', '校科联');
-    this.getDataPerPage(query);
+    this.getDataPerPage(undefined);
     wx.stopPullDownRefresh();
   },
   /**
@@ -58,7 +41,7 @@ Page({
    */
   getDataPerPage: function (query) {
     let that = this;
-    let Product = new wx.BaaS.TableObject(app.globalData.activityTableId);
+    let Product = new wx.BaaS.TableObject(app.globalData.audityTableId);
     if (query == undefined) {
       query = new wx.BaaS.Query();
     }
@@ -73,9 +56,8 @@ Page({
       //进一步处理获取到的数据使之能被瀑布流插件使用
 
       that.setData({
-        activities: that.data.activities.concat(res.data.objects)
+        audityEvents: that.data.activities.concat(res.data.objects)
       });
-      console.log(this.data.activities);
       wx.hideNavigationBarLoading();
 
     }, err => {
@@ -83,5 +65,23 @@ Page({
         title: '网络故障',
       });
     });
+  },
+  audityPass: function (e) {
+    let MyRecord = {
+      state: '审核通过',
+      opinion: '审核通过审核通过'
+    }
+    db_utils.updateData(app.globalData.audityTableId, '5bd65ed8d40d1559b80af920', MyRecord, (res) => {
+      console.log(res);
+    })
+  },
+  audityFail: function (e) {
+    let MyRecord = {
+      state: '审核未通过',
+      opinion: '审核未通过审核未通过'
+    }
+    db_utils.updateData(app.globalData.audityTableId, '5bd65ed8d40d1559b80af920', MyRecord, (res) => {
+      console.log(res);
+    })
   }
 })
