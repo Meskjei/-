@@ -74,6 +74,7 @@ form{
   flex-direction: row;
   align-items: center;
   overflow: auto;
+  flex-wrap: wrap;
 }
 
 input{
@@ -132,6 +133,12 @@ scroll-view{
 .flexContainer{
   width: 2000rpx;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.timePickerContainer{
   display: flex;
   flex-direction: row;
   align-items: center;

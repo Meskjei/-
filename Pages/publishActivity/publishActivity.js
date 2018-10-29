@@ -5,9 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pictures: []  //存放选择的图片对象
+    pictures: [],  //存放选择的图片对象
+    activityDate: '',  //当前选择的活动日期
+    acitivityTime: '', //当前选择的活动时间
+    acitivityLastTime: '' //当前选择的活动持续时间
   },
 
+  /**
+   * 修改活动时间
+   */
+  changeActivityTime: function(event){
+    this.setData({activityTime: event.detail.value});
+  },
+  /**
+   * 修改活动持续时间
+   */
+  changeActivityLastTime: function(event){
+    let result = event.detail.value.split(':');
+    this.setData({ acitivityLastTime: result[0] + ' 小时 ' + result[1] + ' 分钟'});
+  },
+
+  /**
+   * 修改活动日期
+   */
+  changeActivityDate: function(event){
+    console.log(event.detail.value);
+    this.setData({ activityDate: event.detail.value});
+  },
   /**
    * 添加图片
    */
