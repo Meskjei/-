@@ -1,0 +1,25 @@
+<!--Pages/submission/submission.wxml-->
+<import src='../../utils/backBtn.wxml' />
+<template is='backBtn'></template>
+<view class='container'>
+  <text class='title'>上传审核材料</text>
+  <view class='deleteBtn' bindtap='deletePic' wx:if='{{picFilePath.length != 0}}'>
+    <image src='../../images/cancel.png'></image>
+  </view>
+  <view class='addPicBtnContainer' bindtap='addPic' wx:if='{{picFilePath.length == 0}}'>
+    <view class='addPicBtn'>
+      <image src='../../images/addPic2.png'></image>
+      <text>添加材料</text>
+    </view>
+  </view>
+
+  <view class='picContainer' wx:else>
+    <image src='{{picFilePath}}' mode='widthFix'></image>
+  </view>
+  <view class='pictureDescription'>
+    <textarea placeholder='请在此处输入材料描述'></textarea>
+  </view>
+  <view class='submitBtn' bindtap='submit'>
+    <text>提交材料</text>
+  </view>
+</view>

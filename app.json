@@ -10,7 +10,8 @@
     "Pages/checkIn/checkIn",
     "Pages/signSuccess/signSuccess",
     "Pages/my/my",
-    "Pages/activityDetail/activityDetail"
+    "Pages/activityDetail/activityDetail",
+    "Pages/submission/submission"
   ],
   "tabBar": {
     "list": [

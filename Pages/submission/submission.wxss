@@ -1,0 +1,110 @@
+/* Pages/submission/submission.wxss */
+@import '../../utils/backBtn.wxss';
+page{
+
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 150rpx;
+}
+
+.title{
+  width: 300rpx;
+  font-size: 40rpx;
+  display: block;
+  position: absolute;
+  top: -80rpx;
+  left: 50%;
+  margin-left: -150rpx;
+  text-align: center;
+}
+
+.addPicBtnContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  border: 2rpx dashed #ececec;
+  box-sizing: border-box;
+  padding: 15rpx 0;
+}
+
+.picContainer{
+  position: relative;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picContainer image:last-child{
+  width: 100%;
+  display: block;
+}
+
+.addPicBtn{
+  width: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addPicBtn image{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.addPicBtn text{
+  color: #ececec;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.deleteBtn{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  left: 30rpx;
+  top: 20rpx;
+  z-index: 999;
+}
+
+.deleteBtn image{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.submitBtn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70rpx;
+  background-color: #ff000e;
+  color: white;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+
+.pictureDescription{
+  margin-top: 30rpx;
+  width: 95%;
+  height: 350rpx;
+  border: 1rpx solid #ececec;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+.pictureDescription textarea{
+  width: 100%;
+  height: 100%;
+  padding: 10rpx 5rpx;
+}

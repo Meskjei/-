@@ -56,7 +56,7 @@ Page({
       //进一步处理获取到的数据使之能被瀑布流插件使用
 
       that.setData({
-        audityEvents: that.data.activities.concat(res.data.objects)
+        audityEvents: that.data.audityEvents.concat(res.data.objects)
       });
       wx.hideNavigationBarLoading();
 
