@@ -1,4 +1,24 @@
 <!--Pages/audity/audity.wxml-->
-<text>Pages/audity/audity.wxml</text>
-<button bindtap='audityPass'>审核通过</button>
-<button bindtap='audityFail'>审核未通过</button>
+<!--返回键-->
+<import src='../../utils/backBtn.wxml' />
+<template is='backBtn'></template>
+<!--页面总容器-->
+<view class='container'>
+  <!--审核通过按钮-->
+  <button bindtap='audityPass' class='audityPass'>
+    <image src='../../images/yes.png'></image>
+  </button>
+  <!--审核失败按钮-->
+  <button bindtap='audityFail' class='audityFail'>
+    <image src='../../images/no.png'></image>
+  </button>
+  <!--图片容器-->
+  <view class='picContainer'>
+    <image mode='widthFix'></image>
+  </view>
+  <!--材料容器-->
+  <view class='descriptionContainer'>
+    <text class='descriptionTitle'>材料描述</text>
+    <text>Test</text>
+  </view>
+</view>

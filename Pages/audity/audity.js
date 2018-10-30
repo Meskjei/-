@@ -10,7 +10,7 @@ Page({
   data: {
     currentActivityIndex: 0,
     offset: 0, //当前的偏移量
-    audityEvents: [],
+    audityEvents: [], 
   },
 
   /**

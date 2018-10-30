@@ -1,1 +1,95 @@
 /* Pages/audity/audity.wxss */
+@import '../../utils/backBtn.wxss';
+page{
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.container{
+  position: relative;
+  width: 100%;
+  margin-top: 180rpx;
+}
+
+/*按钮样式*/
+button{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to right top, #5675ad, #64bdcc);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+button image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+button::after{
+  border: none;
+}
+
+button:active{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.audityPass{
+  position: absolute;
+  right: -5rpx;
+  top: -25rpx;
+}
+
+.audityFail{
+  position: absolute;
+  left: -5rpx;
+  top: -25rpx;
+}
+
+/*图片容器*/
+.picContainer{
+  width: 100%;
+  background-color: white;
+  box-shadow: 1rpx 2rpx 5rpx rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 15rpx;
+}
+
+.picContainer image{
+  width: 100%;
+}
+
+/*材料样式*/
+.descriptionContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30rpx;
+}
+
+.descriptionTitle{
+  display: block;
+  border-left: 15rpx solid #5675ad;
+  font-size: 35rpx;
+  font-weight: bold;
+  padding-left: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.descriptionContainer text:last-of-type{
+  width: 100%;
+  font-size: 30rpx;
+  color: #989898;
+  font-weight: bold;
+}
+
