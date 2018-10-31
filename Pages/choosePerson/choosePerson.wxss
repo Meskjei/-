@@ -1,0 +1,72 @@
+/* Pages/choosePerson/choosePerson.wxss */
+@import '../../utils/backBtn.wxss';
+page{
+  background-color: #f8f8f8;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.title{
+  display: block;
+  width: 400rpx;
+  text-align: center;
+  position: absolute;
+  top: 70rpx;
+  left: 50%;
+  margin-left: -200rpx;
+  font-size: 40rpx;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150rpx;
+}
+
+/* 学生容器 */
+.studentContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.student{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: white;
+  margin-bottom: 30rpx;
+}
+
+.student:active{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.student-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.student-left image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+
+.student-right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

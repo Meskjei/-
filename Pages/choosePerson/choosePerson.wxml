@@ -1,0 +1,17 @@
+<!--Pages/choosePerson/choosePerson.wxml-->
+<import src='../../utils/backBtn.wxml' />
+<template is='backBtn'></template>
+<text class='title'>选择要审核的学生</text>
+<view class='container'>
+  <view class='studentContainer'>
+    <view class='student'>
+      <view class='student-left'>
+        <image></image>
+      </view>
+      <view class='student-right'>
+        <text class='studentName'>Test</text>
+        <text class='studentInfo'>数学与信息学院 软件工程</text>
+      </view>
+    </view>
+  </view>
+</view>

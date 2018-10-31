@@ -1,9 +1,9 @@
 {
   "pages": [
+    
     "Pages/login/login",
-    "Pages/myActivity/myActivity",    
+    "Pages/myActivity/myActivity",
     "Pages/publishActivity/publishActivity",
-    "Pages/chooseActivity/chooseActivity",
     "Pages/myMarks/myMarks",
     "Pages/home/home",
     "Pages/checkIn/checkIn",
@@ -11,7 +11,8 @@
     "Pages/my/my",
     "Pages/activityDetail/activityDetail",
     "Pages/submission/submission",
-    "Pages/audity/audity"
+    "Pages/audity/audity",
+    "Pages/choosePerson/choosePerson"
   ],
   "tabBar": {
     "list": [

@@ -13,7 +13,8 @@ Page({
     activityId:[],
     activities: [],
     currentIndex: 0, //当前的swiper索引值
-    swiperHeight: 0 //swiper容器高度
+    swiperHeight: 0, //swiper容器高度
+    userType: ''  //用户类型
   },
 
   /**
