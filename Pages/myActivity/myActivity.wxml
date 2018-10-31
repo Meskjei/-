@@ -1,21 +1,51 @@
 <!--Pages/myActivity/myActivity.wxml-->
-<import src='../../utils/backBtn.wxml'/>
+<import src='../../utils/backBtn.wxml' />
 <template is='backBtn'></template>
 <text class='title'>我参加的活动</text>
-<view class='activityContainer'>
+<wxs src='../home/format.wxs' module='format' />
+<view class='header'>
+  <view class='tabContainer'>
+    <view class='tab {{currentIndex == 0 ? "active" : ""}}' data-index='0' bindtap='changeTab'>进行中</view>
+    <view class='tab {{currentIndex == 1 ? "active" : ""}}' data-index='1' bindtap='changeTab'>未开始</view>
+    <view class='tab {{currentIndex == 2 ? "active" : ""}}' data-index='2' bindtap='changeTab'>已完成</view>
+  </view>
+</view>
+
+<swiper class='activityContainer' style='height: {{swiperHeight}}rpx' current='{{currentIndex}}' bindchange='changeTab'>
+  <!--进行中-->
+  <swiper-item>
     <block wx:for='{{activities}}'>
-      <view class='activity' bindtap='toDetail' data-activity='{{item}}'>
+      <view class='activity'>
         <view class='activity-left'>
-          <text class='activityTitle'>{{item.title}}</text>
-          <text class='activityBrief'>{{item.content}}</text>
-          <view class='publishInfo'>
-            <text>by {{item.publisher.publisherName}}</text>
-            <text class='publishTime'>{{format.formatTime(item.created_at)}}</text>
-          </view>
+          <text class='activitiyTitle'>{{item.title}}</text>
+          <text class='publishTime'>{{format.formatTime(item.created_at)}}</text>
         </view>
-        <view class='activity-right'>
-          <image src='https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=06f18776399b033b3388fada25cf3620/77c6a7efce1b9d162f210013fedeb48f8d5464da.jpg'></image>
-        </view>
+        <text>></text>
       </view>
     </block>
-  </view>
+  </swiper-item>
+  <!-- 未开始 -->
+  <swiper-item>
+    <block wx:for='{{activities}}'>
+      <view class='activity'>
+        <view class='activity-left'>
+          <text class='activitiyTitle'>{{item.title}}</text>
+          <text class='publishTime'>{{format.formatTime(item.created_at)}}</text>
+        </view>
+        <text>></text>
+      </view>
+    </block>
+  </swiper-item>
+  <!-- 已完成 -->
+  <swiper-item>
+    <block wx:for='{{activities}}'>
+      <view class='activity'>
+        <view class='activity-left'>
+          <text class='activitiyTitle'>{{item.title}}</text>
+          <text class='publishTime'>{{format.formatTime(item.created_at)}}</text>
+        </view>
+        <text>></text>
+      </view>
+    </block>
+  </swiper-item>
+</swiper> 

@@ -12,7 +12,23 @@ Page({
     offset: 0, //当前的偏移量
     activityId:[],
     activities: [],
+    currentIndex: 0, //当前的swiper索引值
+    swiperHeight: 0 //swiper容器高度
   },
+
+  /**
+   * 修改tab
+   */
+  changeTab: function(event){
+      let index;
+      if(event.type == 'change'){
+        index = event.detail.current;
+      } else {
+        index = event.currentTarget.dataset.index;
+      }
+      this.setData({currentIndex: index});
+  },
+
 
   /**
    * 返回上一页监听函数
@@ -94,11 +110,12 @@ Page({
         that.data.offset += 20;
       }
       //进一步处理获取到的数据使之能被瀑布流插件使用
-
+      that.data.activities = that.data.activities.concat(res.data.objects)
       that.setData({
-        activities: that.data.activities.concat(res.data.objects)
+        activities: that.data.activities,
+        swiperHeight: that.data.activities.length * 230
       });
-      console.log(this.data.activities);
+      console.log(this.data);
       wx.hideNavigationBarLoading();
 
     }, err => {

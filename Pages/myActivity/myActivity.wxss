@@ -2,86 +2,103 @@
 @import '../../utils/backBtn.wxss';
 page{
   position: relative;
-}
-.activityContainer {
-  margin-top: 140rpx;
-  width: 100%;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.title {
+
+.title{
   position: absolute;
-  left: 50%;
-  margin-left: -200rpx;
-  top: -70rpx;
+  top: 70rpx;
   display: block;
-  color: #8d8f90;
+  width: 300rpx;
   font-size: 40rpx;
-  width: 400rpx;
+  left: 50%;
+  margin-left: -150rpx;
   text-align: center;
+  color: white;
 }
 
-.activity {
+.header{
+  width: 100%;
+  height: 230rpx;
+  background: linear-gradient(to right top, #5675ad, #64bdcc);
+  border-radius: 0 0 30rpx 30rpx;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tabContainer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 200rpx;
-  width: 95%;
-  margin-bottom: 50rpx;
+}
+
+.tab{
+  margin: 10rpx 50rpx;
+  flex-grow: 1;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 35rpx;
+}
+
+.active{
+  color: white !important;
+}
+
+/*活动样式*/
+.activityContainer{
+  margin-top: 30rpx;
+  width: 100%;
   box-sizing: border-box;
+  padding: 0 20rpx;
+  height: 100%;
 }
 
-.activity-left {
-  display: inline-flex;
-  max-width: 60%;
+.activity{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 200rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 20rpx;
+  box-shadow: 1rpx 2rpx 5rpx rgba(0, 0, 0, 0.3);
+  padding: 20rpx;
+  justify-content: space-between;
+}
+
+.activity-left{
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
-.activityTitle{
+.activitiyTitle{
+  font-size: 35rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  color: #989898;
+  font-weight: bold;
+  margin-bottom: 10rpx;
 }
 
-.activityBrief {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  margin-top: 15rpx;
-  margin-bottom: 15rpx;
-  font-size: 28rpx;
-  color: #bebfbf;
+.publishTime{
+  font-size: 30rpx;
+  color: #ececec;
   font-weight: bold;
 }
 
-.activity .publishInfo text:first-of-type{
-  font-size: 28rpx;
-}
 
-.activity-right{
-  display: inline-flex;
-  width: 38%;
-  height: 100%;
-}
 
-.activity-right image{
-  width: 100%;
-  height: 100%;
-  border-radius: 20rpx;
-}
 
-.activity .publishInfo text{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  max-width: 60%;
-}

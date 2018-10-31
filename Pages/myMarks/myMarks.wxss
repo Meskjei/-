@@ -14,10 +14,10 @@ page {
 
 ec-canvas {
   position: absolute;
-  top: 90rpx;
+  top: 150rpx;
   left: 0;
   right: 0;
-  bottom: 30%;
+  bottom: 20%;
 }
 
 .title{

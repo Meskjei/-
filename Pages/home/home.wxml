@@ -14,10 +14,10 @@
   <wxs src='format.wxs' module='format'/>
   <view class='popularActivityContainer'>
     <text class='title'>热门活动</text>
-    <swiper>
+    <swiper autoplay='true'>
       <block wx:for='{{activities}}'>
         <swiper-item class='popularActivity' bindtap='toDetail' data-activity='{{item}}'>
-          <image src='http://img3.imgtn.bdimg.com/it/u=3930318509,1734424700&fm=26&gp=0.jpg' mode='aspectFill'></image>
+          <image src='{{item.cover}}' mode='aspectFill'></image>
           <text class='popularActivityTitle'>{{item.title}}</text>
           <view class='publishInfo'>
             <view class='publisherInfo'>
@@ -43,7 +43,7 @@
           </view>
         </view>
         <view class='activity-right'>
-          <image src='https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=06f18776399b033b3388fada25cf3620/77c6a7efce1b9d162f210013fedeb48f8d5464da.jpg'></image>
+          <image src='{{item.cover}}'></image>
         </view>
       </view>
     </block>
