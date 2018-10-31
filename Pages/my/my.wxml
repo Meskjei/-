@@ -17,7 +17,7 @@
   </view>
   <view class='functionBar'>
     <block wx:for='{{functionType}}'>
-      <view class='function' bindtap='scanAndUpload' data-index='{{index}}'>
+      <view class='function' bindtap='allFun' data-index='{{index}}'>
         <image src='{{item.functionIconPath}}'></image>
         <text>{{item.functionName}}</text>
       </view>
@@ -28,7 +28,7 @@
     <view class='setting' wx:if='{{userType != "e"}}'>
       <view class='setting-left'>
         <image src='../../images/myParticipate.png'></image>
-        <text>我{{userType == 's' ? '参加' : '发布'}}的活动</text>
+        <text bindtap='toMyActivity'>我{{userType == 's' ? '参加' : '发布'}}的活动</text>
       </view>
       <text>></text>
     </view>

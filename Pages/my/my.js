@@ -68,17 +68,61 @@ Page({
       url: '../myMarks/myMarks',
     });
   },
-  scanAndUpload: function(res) {
+  toMyActivity: function (event) {
+    wx.navigateTo({
+      url: '../myActivity/myActivity',
+    });
+  },
+  toChooseActivity: function (event) {
+    wx.navigateTo({
+      url: '../chooseActivity/chooseActivity',
+    });
+  },
+  toPublishActivity: function (event) {
+    wx.navigateTo({
+      url: '../publishActivity/publishActivity',
+    });
+  },
+  allFun: function(res) {
     let index = res.currentTarget.dataset.index;
-    switch (index) {
-      case 0:
-        this.scan();
-        break;
-      case 1:
-        this.upload();
-        break;
-      default:
-        break;
+    if(app.globalData.userType=='s'){
+      switch (index) {
+        case 0:
+          this.scan();
+          break;
+        case 1:
+          this.upload();
+          break;
+        default:
+          break;
+      }
+    }
+    else if (app.globalData.userType == 'c') {
+      switch (index) {
+        case 0:
+          this.toPublishActivity();
+          break;
+        case 1:
+          this.chooseActivity();
+          break;
+        default:
+          break;
+      }
+    }
+    else if (app.globalData.userType == 'e') {
+      switch (index) {
+        case 0:
+          this.scan();
+          break;
+        case 1:
+          this.upload();
+          break;
+        default:
+          break;
+      }
+    }
+    else{
+      utils.showMessage("用户类型错误");
     }
   },
   scan: function() {
@@ -106,5 +150,5 @@ Page({
         })
       }
     });
-  }
+  },
 })

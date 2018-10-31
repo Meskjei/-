@@ -1,10 +1,10 @@
 {
   "pages": [
-    "Pages/audity/audity",
     "Pages/login/login",
-    "Pages/publishActivity/publishActivity",
-    "Pages/myActivity/myActivity",
     "Pages/chooseActivity/chooseActivity",
+    "Pages/publishActivity/publishActivity",
+    "Pages/audity/audity",
+    "Pages/myActivity/myActivity",
     "Pages/myMarks/myMarks",
     "Pages/home/home",
     "Pages/checkIn/checkIn",
