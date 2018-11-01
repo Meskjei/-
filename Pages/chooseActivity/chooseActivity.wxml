@@ -1,2 +1,17 @@
 <!--Pages/chooseActivity/chooseActivity.wxml-->
-<text>Pages/chooseActivity/chooseActivity.wxml</text>
+<import src='../../utils/backBtn.wxml' />
+<template is='backBtn'></template>
+<text class='title'>选择需要签到的活动</text>
+<wxs src='../home/format.wxs' module='format'/>
+<view class='header'></view>
+<view class='activityContainer'>
+  <block wx:for='{{activities}}'>
+    <view class='activity'>
+      <view class='activity-left'>
+        <text class='activitiyTitle'>{{item.title}}</text>
+        <text class='publishTime'>{{format.formatTime(item.created_at)}}</text>
+      </view>
+      <text>></text>
+    </view>
+  </block>
+</view>
