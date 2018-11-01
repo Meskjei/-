@@ -40,12 +40,12 @@ var showModel = (title, content) => {
   })
 }
 
-// 不带标题的消息提示，可以传入方法和变量作为参数，但要异步执行完方法和变量后才会执行function中的内容
+// 带“确认”及”取消“的消息提示
 var showMessage = content => {
   wx.hideToast();
   wx.showModal({
     content: JSON.stringify(content),
-    showCancel: false,
+    showCancel: true,
     confirmText: "确定"
   })
 }

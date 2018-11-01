@@ -10,24 +10,36 @@ Page({
   data: {
     currentActivityIndex: 0,
     offset: 0, //当前的偏移量
-    activityId:[],
+    activityId: [],
     activities: [],
+    tabActivities: [],
     currentIndex: 0, //当前的swiper索引值
     swiperHeight: 0, //swiper容器高度
-    userType: ''  //用户类型
+    userType: '',  //用户类型
+    currentTime: null,
   },
 
   /**
    * 修改tab
    */
-  changeTab: function(event){
-      let index;
-      if(event.type == 'change'){
-        index = event.detail.current;
-      } else {
-        index = event.currentTarget.dataset.index;
-      }
-      this.setData({currentIndex: index});
+  changeTab: function (event) {
+    let index;
+    if (event.type == 'change') {
+      index = event.detail.current;
+    } else {
+      index = event.currentTarget.dataset.index;
+    }
+    this.setData({ currentIndex: index });
+    if (index == 1) {
+      this.getCurrentTime();
+
+      // // this.data.tabActivities = this.data.activities[this.data.activities.startTime < this.data.currentTime];
+      // let item = this.data.activities.map((item, index) => {
+      //   return item.startTime;
+      // });
+      // console.log(item[item < this.data.currentTime]);
+      // // console.log(this.data.tabActivities)
+    }
   },
 
 
@@ -44,7 +56,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -81,8 +93,8 @@ Page({
     this.data.offset = 0;
     let stuQuery = new wx.BaaS.Query();
     stuQuery.compare('studentId', '=', '5bd072e67bc6aa18e705dc34');
-    db_utils.searchData(app.globalData.joinActivityTableId, stuQuery,(res)=>{
-      this.data.activityId = res.data.objects.map((item,index)=>{
+    db_utils.searchData(app.globalData.joinActivityTableId, stuQuery, (res) => {
+      this.data.activityId = res.data.objects.map((item, index) => {
         return item.activityId;
       });
       console.log(this.data.activityId);
@@ -124,5 +136,31 @@ Page({
         title: '网络故障',
       });
     });
+  },
+  getCurrentTime: function () {
+    let that = this;
+    wx.request({
+      url: 'https://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        that.data.currentTime = new Date(parseInt(res.data.data.t));
+        console.log(that.data.activities);
+        console.log(that.data.activities[0].startTime);
+        console.log(typeof that.data.activities[0].startTime);
+
+        let activityTime = new Date(Date.parse(that.data.activities[0].startTime));
+
+        console.log("test:");
+        console.log(activityTime);
+        console.log(that.data.currentTime);
+        console.log(activityTime < that.data.currentTime);
+        console.log(activityTime > that.data.currentTime);
+      },
+      fail(res) {
+        utils.showModel('网络故障', '获取当前时间失败');
+      }
+    })
   },
 })

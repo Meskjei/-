@@ -15,7 +15,6 @@ Page({
       functionName: '上传材料',
       functionIconPath: '../../images/update.png'
     }], //功能栏功能类型
-    categoryName: '审核材料',
     userInfo: {}, //当前用户信息
     userType: '' //当前用户类型
   },
@@ -83,6 +82,11 @@ Page({
       url: '../publishActivity/publishActivity',
     });
   },
+  toSubmission:function(event){
+    wx.navigateTo({
+      url: '../submission/submission',
+    });
+  },
   allFun: function(res) {
     let index = res.currentTarget.dataset.index;
     if(app.globalData.userType=='s'){
@@ -91,7 +95,7 @@ Page({
           this.scan();
           break;
         case 1:
-          this.upload();
+          this.toSubmission();
           break;
         default:
           break;
@@ -138,17 +142,5 @@ Page({
         });
       }
     })
-  },
-  upload: function() {
-    let that = this;
-    wx.chooseImage({
-      success(res) {
-        console.log(that.data.categoryName);
-        const tempFilePaths = res.tempFilePaths;
-        db_utils.uploadFile(tempFilePaths[0], that.data.categoryName, (res) => {
-          console.log(res);
-        })
-      }
-    });
   },
 })

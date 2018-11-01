@@ -17,7 +17,7 @@
     <image src='{{picFilePath}}' mode='widthFix'></image>
   </view>
   <view class='pictureDescription'>
-    <textarea placeholder='请在此处输入材料描述'></textarea>
+    <textarea placeholder='请在此处输入材料描述' bindinput='getDescription'></textarea>
   </view>
   <view class='submitBtn' bindtap='submit'>
     <text>提交材料</text>
