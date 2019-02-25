@@ -1,15 +1,15 @@
 {
   "pages": [
+    "Pages/my/my",
+    "Pages/login/login",
+    "Pages/home/home",
     "Pages/chooseActivity/chooseActivity",
     "Pages/myActivity/myActivity",
-    "Pages/login/login",
     "Pages/submission/submission",
     "Pages/publishActivity/publishActivity",
     "Pages/myMarks/myMarks",
-    "Pages/home/home",
     "Pages/checkIn/checkIn",
     "Pages/signSuccess/signSuccess",
-    "Pages/my/my",
     "Pages/activityDetail/activityDetail",
     "Pages/audity/audity",
     "Pages/choosePerson/choosePerson"

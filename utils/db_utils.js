@@ -9,14 +9,14 @@ function setQuery(tableObject, query) {
 }
 
 function searchData(tableID, query, cb) {
-  let tableObject = createTableObject(tableID);
+  let tableObject = createTableObject(tableID); // 实例化数据表
   console.log("tableId is:"+tableID);
   if (query != undefined) {
-    tableObject = setQuery(tableObject, query);
+    tableObject = setQuery(tableObject, query); // 应用查询对象
   }
   tableObject.orderBy('-created_at').find().then(res => {
     console.log(res);
-    cb(res);
+    cb(res);  // 执行回调函数
   }, err => {
     console.log(err);
     wx.showToast({

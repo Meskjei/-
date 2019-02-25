@@ -7,14 +7,14 @@
   <view class='tabContainer'>
     <view class='tab {{currentIndex == 0 ? "active" : ""}}' data-index='0' bindtap='changeTab'>进行中</view>
     <view class='tab {{currentIndex == 1 ? "active" : ""}}' data-index='1' bindtap='changeTab'>未开始</view>
-    <view class='tab {{currentIndex == 2 ? "active" : ""}}' data-index='2' bindtap='changeTab'>已完成</view>
+    <view class='tab {{currentIndex == 2 ? "active" : ""}}' data-index='2' bindtap='changeTab'>已结束</view>
   </view>
 </view>
 
 <swiper class='activityContainer' style='height: {{swiperHeight}}rpx' current='{{currentIndex}}' bindchange='changeTab'>
   <!--进行中-->
   <swiper-item>
-    <block wx:for='{{activities}}'>
+    <block wx:for='{{nowActivities}}'>
       <view class='activity'>
         <view class='activity-left'>
           <text class='activitiyTitle'>{{item.title}}</text>
@@ -26,7 +26,7 @@
   </swiper-item>
   <!-- 未开始 -->
   <swiper-item>
-    <block wx:for='{{activities}}'>
+    <block wx:for='{{featureActivities}}'>
       <view class='activity'>
         <view class='activity-left'>
           <text class='activitiyTitle'>{{item.title}}</text>
@@ -38,7 +38,7 @@
   </swiper-item>
   <!-- 已完成 -->
   <swiper-item>
-    <block wx:for='{{activities}}'>
+    <block wx:for='{{endActivities}}'>
       <view class='activity'>
         <view class='activity-left'>
           <text class='activitiyTitle'>{{item.title}}</text>
